@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/themes/default/style.min.css" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="dist/jstree.min.js"></script>
+</head>
+
+<body>
+    <div id="treeview1">
+
+    </div>
+    <script>
+     $(document).ready(function() {
+        
+        var ay_mssys =
+            [
+                {
+                    "id": "1",
+                    "text": "AAAAA",
+                    "state": {
+                        "opened": true
+                    },
+                    "icon": "img/1198026.png",
+                    "children":
+                    [
+                        {
+                            "id": "2",
+                            "text": "aaaaa",
+                            "icon": "img/1114198.png",
+                            "children":
+                            [
+                                {
+                                    "id": "3",
+                                    "text": "aaa-aaaa",
+                                    icon: "img/1123945.png"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4",
+                            "text": "bbbbbb",
+                            "icon": "img/1114198.png"
+                        },
+                        {
+                            "id": "5",
+                            "text": "cccccc",
+                            "icon": "img/1123945.png"
+                        }
+                    ]
+                },
+                {
+                    "id": "6",
+                    "text": "BBBBBB",
+                    icon: "img/1202473.png"
+                }
+            ]
+            $("#treeview1").jstree({
+                "plugins" : ["types"],
+                "types": {
+                    "default" : {
+                        "icon" : false
+                    },
+                },
+                'core' : {
+                'data' :  ay_mssys
+                }
+            });
+            $("#1_anchor").load(function() {
+                console.log('######################')
+                $('#1_anchor')
+                .append('<i class="jstree-icon jstree-themeicon jstree-themeicon-custom" role="presentation" style="margin-left: 20px;background-image: url(&quot;img/1201475_1.png&quot;); background-position: center center; background-size: auto;"></i>')
+                .prepend('<i class="jstree-icon jstree-themeicon jstree-themeicon-custom" role="presentation" style="margin-right: 5px;background-image: url(&quot;img/1202473.png&quot;); background-position: center center; background-size: auto;"></i>')
+            });
+            // setTimeout(function () {
+            //     $('#1_anchor')
+            //     .append('<i class="jstree-icon jstree-themeicon jstree-themeicon-custom" role="presentation" style="margin-left: 20px;background-image: url(&quot;img/1201475_1.png&quot;); background-position: center center; background-size: auto;"></i>')
+            //     .prepend('<i class="jstree-icon jstree-themeicon jstree-themeicon-custom" role="presentation" style="margin-right: 5px;background-image: url(&quot;img/1202473.png&quot;); background-position: center center; background-size: auto;"></i>')
+            // },200)
+           
+        })
+    </script>
+</body>
+
+</html>
