@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-2.0.3/jquery-2.0.3.js"></script>
+</head>
+<body>
+    <table>
+            <tr> 
+                <td><b>1</b></td> 
+                <td class="caname"><b>哈哈</b></td> 
+                <td><b>删除</b></td> 
+            </tr> 
+            <tr> 
+                <td><b>2</b></td> 
+                <td class="caname"><b>哈哈</b></td> 
+                <td><b>删除</b></td> 
+            </tr> 
+    </table>
+   
+    <script>
+       
+    // $(function() { 
+        //获取class为caname的元素 
+        $(".caname").click(function() { 
+            var td = $(this); 
+            if (td.find("input").length>0)
+                return;
+            var txt = td.text(); 
+            var input = $("<input type='text'value='" + txt + "'/>"); 
+            td.html(input); 
+            //获取焦点 
+            input.focus();
+            //文本框失去焦点后提交内容，重新变为文本 
+            input.blur(function() { 
+                var newtxt = $(this).val(); 
+                //判断文本有没有修改 
+                if (newtxt != txt) { 
+                td.html(newtxt); 
+                }else {
+                    td.html(txt);
+                }
+                
+            });
+        });
+    // });
+    </script>
+</body>
+</html>
